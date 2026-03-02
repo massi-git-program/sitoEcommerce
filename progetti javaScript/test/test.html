@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6F" crossorigin="anonymous">
+    
+>
+  <style>
+    label {font-weight: bold; color: blue;}
+  </style>
+  <title>STRINGHE</title>
+</head>
+<body>
+  <div class="container">
+    <form>
+ 
+      <div class="mb-3">
+        <label for="cognome" class="form-label">Cognome</label>
+        <input type="text" class="form-control bg-info bg-opacity-25" id="cognome">      
+      </div>
+ 
+      <div class="mb-3">
+        <label for="peso" class="form-label">Peso (in kg)</label>
+        <input type="text" class="form-control bg-info bg-opacity-25" id="peso">
+      </div>
+ 
+      <button class="btn btn-primary" id="bottone">INVIA</button>
+    </form>
+  </div>
+ 
+  <script>
+    function gestoreClick()
+    {
+      let cognome = document.querySelector("#cognome").value;
+      let peso = document.querySelector("#peso").value;
+ 
+      if (cognome==="")
+      {
+         console.log("Hai lasciato vuota la casella cognome");
+ 
+         if (peso==="")
+         {
+           console.log("cognome e nome sono stati lasciati vuoti");
+         }
+         else
+         {
+          console.log("Solo il cognome è stato lasciato vuoto");
+         }
+      }
+      else
+      {
+        if (peso==="")
+        {
+          console.log("Solo il nome è stato lasciato vuoto");
+        }
+        else
+        {
+          console.log("Cognome e nome inseriti, OK!");
+        }
+      }
+ 
+      if (cognome==="" || peso==="")
+      {
+        console.log("il cognome o il nome sono stati lasciati vuoti");
+      }
+      else
+      {
+        console.log("Cognome e nome inseriti, OK!");
+      }      
+ 
+      console.log(cognome);
+      console.log(peso);
+    }
+ 
+  </script>
+  
+  <script>
+    //otteniamo un riferimento al bottone nel DOM
+    let rifBottone = document.querySelector("#bottone"); 
+ 
+    if (rifBottone !== null)
+    {
+      rifBottone.addEventListener("click", gestoreClick);
+    }
+    else
+    {
+      alert("Elemento con id 'bottone' non trovato");
+    }
+    
+  </script>
+</body>
+</html>
